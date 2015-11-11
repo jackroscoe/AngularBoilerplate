@@ -1,14 +1,18 @@
 {
+
   "name": "boilerplate",
   "description": "A scaffold for an Angular JS project",
   "main": "app/app.modules.js",
+
   "authors": [
     "Jack Roscoe"
   ],
+
   "license": "ISC",
   "moduleType": [],
   "homepage": "app/index.html",
   "private": true,
+
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,7 +20,9 @@
     "test",
     "tests"
   ],
+
   "dependencies": {
     "angular": "~1.4.7"
   }
+
 }

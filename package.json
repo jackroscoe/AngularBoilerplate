@@ -1,14 +1,17 @@
 {
+
   "name": "boilerplate",
   "version": "1.0.0",
   "description": "A scaffold for an Angular JS project",
   "main": "app/app.modules.js",
   "author": "Jack Roscoe",
   "license": "ISC",
+
   "devDependencies": {
     "bower": "^1.6.5",
     "http-server": "^0.8.5"
   },
+
   "scripts": {
 
     "postinstall_COMMENT": "Install bower components after '$ npm install' is run",
