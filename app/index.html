@@ -9,7 +9,15 @@
 </head>
 <body>
     <h1>Angular Boilerplate</h1>
+    <a href="#index">Index</a>
+    <a href="#home">Home</a>
 
-    <script src="assets/lib/angular.js" />
+    <div ng-view></div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.routes.js"></script>
+    <script src="components/home/homeController.js"></script>
 </body>
 </html>

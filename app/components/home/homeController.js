@@ -10,12 +10,12 @@
 
     'use strict';
 
-    angular.module('placeholderAppName.home')
+    angular.module('placeholderAppName.home', [])
 
-        .controller('homeController', function() {
+    .controller('homeController', [function() {
 
-            
 
-        });
+
+    }]);
 
 })();
