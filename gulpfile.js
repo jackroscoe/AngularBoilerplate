@@ -17,10 +17,13 @@
  * 1. Get Packages
  */
 var gulp = require('gulp'),
-    gutil = require('gulp-util'),
     sass = require('gulp-sass'),
     jshint = require('gulp-jshint'),
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    ngAnnotate = require('gulp-ng-annotate'),
+    rename = require('gulp-rename');
 
 
 
@@ -34,13 +37,23 @@ gulp.task('default', ['watch']);
 
 
 /**
- * 3 .Configure jshint to watch all of our JS files and exclude bower_components
+ * 3 .Configure jshint, concat and uglify to do their thing on our JS files
  */
-gulp.task('jshint', function() {
+gulp.task('js', function() {
    return gulp.src(['app/**/*.js', '!app/bower_components/**/*.js'])
        .pipe(jshint())
-       .pipe(jshint.reporter('jshint-stylish'));
+       .pipe(jshint.reporter('jshint-stylish'))
+       .pipe(sourcemaps.init())
+            .pipe(concat('app.js'))
+       .pipe(gulp.dest('app/assets/js'))
+       .pipe(rename('app.min.js'))
+           .pipe(ngAnnotate())
+           .pipe(uglify())
+       .pipe(sourcemaps.write())
+       .pipe(gulp.dest('app/assets/js'))
 });
+
+
 
 
 /**
@@ -58,12 +71,12 @@ gulp.task('build-css', function() {
 
 
 /**
- * 4. Configure watch to listen certain files
+ * 5. Configure watch to listen certain files
  */
 gulp.task('watch', function() {
 
     // Watch for change in JS files but exclude bower_components
-    gulp.watch(['app/**/*.js', '!app/bower_components/**/*.js'], ['jshint']);
+    gulp.watch(['app/**/*.js', '!app/bower_components/**/*.js'], ['js']);
 
     // Watch for changes in ou .scss files
     gulp.watch('app/assets/styles/sass/*.scss', ['build-css']);
