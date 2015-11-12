@@ -1,30 +1,28 @@
 {
-
   "name": "boilerplate",
   "version": "1.0.0",
   "description": "A scaffold for an Angular JS project",
   "main": "app/app.modules.js",
   "author": "Jack Roscoe",
   "license": "ISC",
-
   "devDependencies": {
     "bower": "^1.6.5",
-    "http-server": "^0.8.5"
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.12.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "http-server": "^0.8.5",
+    "jshint-stylish": "^2.0.1"
   },
-
   "scripts": {
-
     "postinstall_COMMENT": "Install bower components after '$ npm install' is run",
     "postinstall": "bower install",
-
     "prestart_COMMENT": "Install npm components before starting the server",
     "prestart": "npm install",
-
     "test_COMMENT": "Unit testing is yet to be configured",
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "start_COMMENT": "Start the server and serve the app!",
     "start": "http-server -a localhost -p 8000 -c-1"
-
   }
 }

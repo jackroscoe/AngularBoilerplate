@@ -11,7 +11,8 @@
     .config(['$routeProvider', function($routeProvider) {
 
         // Routes will go here
-        $routeProvider.when('/home', {
+        $routeProvider.
+        when('/home', {
             templateUrl: 'components/home/home.html',
             controller: 'homeController'
         }).

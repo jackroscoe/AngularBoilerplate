@@ -12,10 +12,10 @@
 
     angular.module('placeholderAppName.home', [])
 
-    .controller('homeController', [function() {
+    .controller('homeController', function() {
 
 
 
-    }]);
+    });
 
 })();
