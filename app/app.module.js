@@ -6,8 +6,7 @@
     angular.module('placeholderAppName',
         [
             'placeholderAppName.customRoutesModule',
-            'placeholderAppName.home',
-            'placeholderAppName.login'
+            'placeholderAppName.home'
         ]
     );
 

@@ -10,11 +10,11 @@
 
     'use strict';
 
-    angular.module('placeholderAppName.home', [])
+    angular.module('placeholderAppName.home', ['ngAnimate'])
 
-    .controller('homeController', function() {
+    .controller('homeController', function($scope) {
 
-
+        $scope.imageVisibility = false;
 
     });
 })();

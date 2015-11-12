@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
 </head>
-<body>
+<body ng-controller="homeController as home">
 
     <h1>Home Page</h1>
 
+    <button ng-click="imageVisibility = !imageVisibility" ng-class="{ active: imageVisibility }">Toggle Image</button>
+
+    <!-- show and hide the lion picture -->
+    <div ng-show="imageVisibility">
+        <img src="https://scotch.io/wp-content/uploads/2015/11/Banner-300x300px.png">
+    </div>
 
 </body>
 </html>
